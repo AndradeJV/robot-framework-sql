@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220417 14:50:46.353" rpa="false" schemaversion="2">
+<suite id="s1" name="Delete-Database" source="C:\Users\joao.andrade\Documents\pessoal\estudos\python\robot\conectdatabase\delete-database.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
+<arg>dbConfigFile=config/database-connect.cfg</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220417 14:50:46.632" level="INFO">Connecting using : pymysql.connect(db=robot_test, user=root, passwd=mysql, host=localhost, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220417 14:50:46.460" endtime="20220417 14:50:46.648"/>
+</kw>
+<test id="s1-t1" name="Deletar cliente cliente">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>DELETE FROM Persons WHERE PersonID = 45</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220417 14:50:46.650" level="INFO">Executing : Execute SQL String  |  DELETE FROM Persons WHERE PersonID = 45 </msg>
+<status status="PASS" starttime="20220417 14:50:46.649" endtime="20220417 14:50:46.653"/>
+</kw>
+<status status="PASS" starttime="20220417 14:50:46.648" endtime="20220417 14:50:46.654"/>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220417 14:50:46.658" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220417 14:50:46.657" endtime="20220417 14:50:46.658"/>
+</kw>
+<status status="PASS" starttime="20220417 14:50:46.356" endtime="20220417 14:50:46.658"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Delete-Database">Delete-Database</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
