@@ -1,8 +1,8 @@
 *** Settings ***
-Library     DatabaseLibrary
+Resource            config/base.robot
 
-Suite Setup     Connect To Database         dbConfigFile=config/database-connect.cfg
-Suite Teardown  Disconnect From Database
+Suite Setup         New Session
+Suite Teardown      Close Session
 
 
 *** Test Cases ***
